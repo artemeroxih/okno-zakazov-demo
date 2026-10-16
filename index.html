@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Заявка на десерт</title>
+<meta name="theme-color" content="#FFF8F1">
+<!-- Пока это тест: не показывать в поисковиках. Убрать при настоящем запуске. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23B83A4B'/%3E%3Ccircle cx='16' cy='13' r='5' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=2026-10-16a">
+</head>
+<body>
+
+<!-- Значки и рисунок-заглушка для фото -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="cake" viewBox="0 0 120 100">
+    <ellipse cx="60" cy="92" rx="52" ry="6" fill="rgba(0,0,0,.08)"/>
+    <rect x="14" y="52" width="92" height="38" rx="8" fill="#FFFFFF"/>
+    <rect x="14" y="66" width="92" height="7" fill="var(--primary)" opacity=".25"/>
+    <rect x="26" y="26" width="68" height="28" rx="7" fill="#FFFFFF"/>
+    <path d="M26 40c6 6 11 6 17 0s11-6 17 0 11 6 17 0 11-6 17 0" stroke="var(--primary)" stroke-opacity=".45" stroke-width="3" fill="none"/>
+    <circle cx="60" cy="18" r="7" fill="var(--primary)"/>
+    <path d="M60 11c2-5 6-7 9-7" stroke="var(--text)" stroke-opacity=".5" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<main>
+  <!-- 1. Каталог -->
+  <section class="screen" id="screen-catalog">
+    <header class="brand" id="brand"></header>
+    <div class="info">
+      <div id="info-days" hidden></div>
+      <div id="info-pickup"></div>
+    </div>
+    <h2 id="catalog-title"></h2>
+    <div class="catalog" id="catalog" aria-live="polite"></div>
+    <div class="card footer" id="contact-box"></div>
+  </section>
+
+  <!-- 2. Заявка (заполняется из form.js) -->
+  <section class="screen narrow" id="screen-form" hidden></section>
+
+  <!-- 3. Заявка отправлена (заполняется из app.js) -->
+  <section class="screen narrow" id="screen-done" hidden></section>
+</main>
+
+<!-- Окно «Ваши данные» -->
+<dialog id="privacy" class="card"></dialog>
+
+<!-- Порядок важен: сначала настройки и тексты, потом помощники, данные и экраны -->
+<script src="config.js?v=2026-10-16a"></script>
+<script src="texts.js?v=2026-10-16a"></script>
+<script src="js/utils.js?v=2026-10-16a"></script>
+<script src="test-data.js?v=2026-10-16a"></script>
+<script src="js/message.js?v=2026-10-16a"></script>
+<script src="js/stubs.js?v=2026-10-16a"></script>
+<script src="js/sheet-csv.js?v=2026-10-16a"></script>
+<script src="js/api.js?v=2026-10-16a"></script>
+<script src="js/calendar.js?v=2026-10-16a"></script>
+<script src="js/catalog.js?v=2026-10-16a"></script>
+<script src="js/form.js?v=2026-10-16a"></script>
+<script src="js/app.js?v=2026-10-16a"></script>
+</body>
+</html>
