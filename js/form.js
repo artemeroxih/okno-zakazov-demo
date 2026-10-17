@@ -133,6 +133,8 @@ window.Okno = window.Okno || {};
       "</fieldset>";
 
     html += "<fieldset><legend>" + esc(T.yourData) + "</legend>" +
+      // Только в демо: у клиентов поля demoNotice в config.js нет
+      (C.demoNotice ? '<div class="alert neutral demo-note" role="note">' + O.icon("alert") + "<p>" + esc(C.demoNotice) + "</p></div>" : "") +
       field("f-name", T.name, "text", "given-name", "err-name") + errP("name") +
       field("f-phone", T.phone, "tel", "tel", "err-phone err-contact") + errP("phone") +
       field("f-telegram", T.telegram, "text", "off", "err-telegram err-contact", T.telegramPlaceholder) + errP("telegram") +
